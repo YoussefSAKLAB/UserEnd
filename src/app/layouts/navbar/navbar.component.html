@@ -1,0 +1,57 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+        <h1 class="logo me-auto"><a href="#" routerLink="/"><img src="assets/img/logo.png" alt="Logo"/></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <li><a  href="/" [ngClass]="{'active': currentRoute === '/'}">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="/departement" [ngClass]="{'active': currentRoute === '/departement'}">
+                    <span>Département</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li>
+                            <a href="/mots-chef-departement" [ngClass]="{'active': currentRoute === '/mots-chef-departement'}">Mot du Chef de Département</a>
+                        </li>
+                        <li><a href="/a-propos-departement-informatique" [ngClass]="{'active': currentRoute === '/a-propos-departement-informatique'}">A Propos du Département d'Informatique </a></li>
+                        <li><a href="/histoire-galerie" [ngClass]="{'active': currentRoute === '/histoire-galerie'}">Histoire et Galerie</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Formation</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">Licence</a></li>
+                        <li><a href="#">Licence d'Excelence</a></li>
+                        <li><a href="/master" [ngClass]="{'active': currentRoute === '/master'}">Master/Master Spécialisé</a></li>
+                        <li><a href="#">Projets de Fin d'Etudes et Stage</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Recherche Scientifique</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">Laboratoires de Recherche</a></li>
+                        <li><a href="#">Thèses</a></li>
+                        <li><a href="#">Publications</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Sport & Culture</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">Sport</a></li>
+                        <li><a href="#">Culture</a></li>
+                        <li><a href="#">Club des Etudiants</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.fs-umi.ac.ma/Espace_Etudiant">Espace Etudiant</a></li>
+
+                <li class="navbar-search">
+                    <form action="" method="post">
+                        <input type="text" name="searchBox"><button type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                </li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->

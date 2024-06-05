@@ -1,0 +1,266 @@
+<main id="main">
+    <section id="hero-slider" class="hero-slider">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" *ngFor="let j of sliderAnnonceRange" [attr.data-bs-slide-to]="j-1" [class.active]="j === 1" aria-current="true" [attr.aria-label]="'Slide'+j"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let sliderAnnonce of sliderAnnonces,let i = index" [class.active]="i === 0" >
+                    <a [attr.href]="'/'+sliderAnnonce.slug"><img src="assets/img/uploads/{{sliderAnnonce.featuredImage}}" class="d-block w-100" alt="..."></a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section> <!--End Hero Slider Section -->
+    <section class="pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 section-title">
+                <p>Actualités</p>
+            </div>
+            <div class="col-6 text-right">
+                <a class="btn btn-primary mb-3 mr-1" data-bs-target="#carouselExampleIndicators2" role="button" data-bs-slide="prev">
+                    <i class="bi bi-caret-left-fill"></i>
+                </a>
+                <a class="btn btn-primary mb-3 " data-bs-target="#carouselExampleIndicators2" role="button" data-bs-slide="next">
+                    <i class="bi bi-caret-right-fill"></i>
+                </a>
+            </div>
+            <div class="col-12">
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item" *ngFor="let i of annonceRange" [class.active]="i === 1">
+                            <div class="row">
+                                <div class="col-md-4 mb-3" *ngFor="let annonce of (i === 1 ? annonces.slice(0, 3) : annonces.slice(3, 6))">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="assets/img/uploads/{{annonce.featuredImage}}">
+                                        <div class="card-body">
+                                            <span class="badge bg-secondary">{{annonce.created_at | date:'dd/MM/yyyy - HH:mm'}}</span>
+                                            <h4 class="card-title">{{annonce.title}}</h4>
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <h4 class="postTag">{{annonce.annonceType.name}}</h4>
+                                            </div>
+                                            <hr>
+                                            <a [attr.href]="'/'+annonce.slug">Continuer la lecture <i class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                    <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                    <h3>À propos du Département d'informatique</h3>
+                    <p class="fst-italic">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.
+                    </p>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                        <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                    </ul>
+                    <p>
+                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                    </p>
+                    <a class="btn btn-primary" href="/a-propos-departement-informatique">En savoir plus</a>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Section -->
+    <!-- ======= Counts Section ======= --
+    <section id="counts" class="counts section-bg">
+        <div class="container">
+
+            <div class="row counters">
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="3000" data-purecounter-duration="1" class="purecounter">+</span>
+                    <p>Etudiants</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Doctorants</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Events</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Trainers</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section> End Counts Section -->
+
+    <!-- ======= Popular Courses Section ======= -->
+    <section id="popular-courses" class="courses">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Etudes</h2>
+                <p>Filières Accréditées</p>
+            </div>
+
+            <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="course-item">
+                        <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
+                        <div class="course-content">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Licence</h4>
+                            </div>
+
+                            <h3><a href="course-details.html">MIP</a></h3>
+                            <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                            <div class="trainer d-flex justify-content-between align-items-center">
+                                <span>Résponsable</span>
+                                <div class="trainer-profile d-flex align-items-center">
+                                    <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                                    <span>Antonio</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Course Item-->
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                    <div class="course-item">
+                        <img src="assets/img/course-2.jpg" class="img-fluid" alt="...">
+                        <div class="course-content">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Master</h4>
+                            </div>
+
+                            <h3><a href="/master">Intelligence Artificielle et Analyse de Données</a></h3>
+                            <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                            <div class="trainer d-flex justify-content-between align-items-center">
+                                <span>Résponsable</span>
+                                <div class="trainer-profile d-flex align-items-center">
+                                    <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                                    <span>Prof. My Ali BEKRI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Course Item-->
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                    <div class="course-item">
+                        <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
+                        <div class="course-content">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Licence d'Excellence</h4>
+                            </div>
+
+                            <h3><a href="course-details.html">Intelligence Artificielle et Analyse de Données</a></h3>
+                            <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                            <div class="trainer d-flex justify-content-between align-items-center">
+                                <span>Résponsable</span>
+                                <div class="trainer-profile d-flex align-items-center">
+                                    <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                                    <span>Prof. My Ali BEKRI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Course Item-->
+
+            </div>
+
+        </div>
+    </section><!-- End Popular Courses Section -->
+
+    <!-- ======= Trainers Section ======= -->
+    <section id="trainers" class="trainers">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Département</h2>
+                <p>Résponsables</p>
+            </div>
+            <div class="row" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                        <div class="member-content">
+                            <h4>Walter White</h4>
+                            <span>Chef de Département</span>
+                            <p>
+                                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                            </p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-envelope-fill"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                        <div class="member-content">
+                            <h4>Anthony Jhinson</h4>
+                            <span>Chef de Filière MIP</span>
+                            <p>
+                                Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
+                            </p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-envelope-fill"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <img src="assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
+                        <div class="member-content">
+                            <h4>William Anderson</h4>
+                            <span>Cordonnateur du Master IAAD</span>
+                            <p>
+                                Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
+                            </p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-envelope-fill"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Trainers Section -->
+
+</main><!-- End #main -->

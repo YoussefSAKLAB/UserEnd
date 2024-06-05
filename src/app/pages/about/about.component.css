@@ -1,0 +1,14 @@
+.col-lg-12.pt-4.pt-lg-0.order-2.order-lg-1.content {
+    text-align: justify;
+}
+img.img-fluid{
+    float: right;
+    margin-left: 1em;
+    width: 50%;
+    height: 40%;
+}
+.gallery
+{
+    display: inline-block;
+    margin-top: 20px;
+}

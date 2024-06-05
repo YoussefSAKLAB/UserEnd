@@ -1,0 +1,9 @@
+section#about {
+    margin-top: -5%;
+}
+.col-lg-12.pt-4.pt-lg-0.order-2.order-lg-1.content {
+    text-align: justify;
+}
+.col-6.section-title {
+    padding-bottom: 0px !important;
+}

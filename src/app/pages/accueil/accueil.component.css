@@ -1,0 +1,16 @@
+a.btn.btn-primary.mb-3.mr-1 {
+    margin-right: 1%;
+}
+.col-6.text-right {
+    text-align: right !important;
+}
+section.pt-5.pb-5 {
+    margin-top: -5%;
+}
+h4.postTag{
+    font-size: 14px;
+    background: #007fa4;
+    padding: 7px 14px;
+    color: #fff;
+    margin: 0;
+}

@@ -1,0 +1,40 @@
+
+<main id="main">
+
+    <section class="single-post-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 post-content" data-aos="fade-up">
+
+                    <!-- ======= Single Post Content ======= -->
+                    <div class="single-post">
+                        <h1>{{selectedAnnonce.title}}</h1>
+                        <div class="post-meta mb-5"><span>{{ selectedAnnonce.created_at | date :"dd/MM/yyyy" }} | Licence</span></div>
+                        <div [innerHTML]="selectedAnnonce.content"></div>
+                    </div><!-- End Single Post Content -->
+
+
+                </div>
+                <div class="col-md-3">
+                    <!-- ======= Sidebar ======= -->
+                    <div class="aside-block">
+
+                        <h3>Articles Récents</h3>
+
+                        <div id="pills-tabContent">
+
+                            <!-- Popular -->
+                            <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                                <div class="post-entry-1 border-bottom" *ngFor="let annonce of annonces.slice(0, 3)">
+                                    <h2 class="mb-2"><a class="post-title" [attr.href]="'/'+annonce.slug">{{annonce.title}}</a></h2>
+                                    <div class="post-meta"><span class="date">{{annonce.annonceType.name}}</span> <span class="mx-1">&bullet;</span> <span>{{annonce.created_at | date :"dd/MM/yyyy"}}</span></div>
+                                </div>
+                            </div> <!-- End Popular -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main><!-- End #main -->
